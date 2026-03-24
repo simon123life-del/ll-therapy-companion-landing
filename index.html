@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapy Companion — A Resource Guide for Parkinson's Voice Therapy | Lasting Language</title>
+  <meta name="description" content="A comprehensive resource guide for Parkinson's Voice Therapy by Amanda Smith & Abigail Wallace. Practical exercises, strategies, and support for patients and caregivers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #4a6b6f;
+      --teal-deep: #3a565a;
+      --teal-light: #6b9499;
+      --cream: #f7f4f0;
+      --cream-warm: #efe9e1;
+      --sand: #d9cfc3;
+      --charcoal: #2c2c2c;
+      --text: #3d3d3d;
+      --text-light: #6b6b6b;
+      --white: #ffffff;
+      --sage: #8fa d9a;
+      --sage: #8fad9a;
+      --gold-soft: #c4a87a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Libre Franklin', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.4s ease;
+      background: transparent;
+    }
+    nav.scrolled {
+      background: rgba(247, 244, 240, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+    }
+    .nav-logo {
+      height: 48px;
+      opacity: 0.9;
+      transition: opacity 0.3s;
+    }
+    .nav-logo:hover { opacity: 1; }
+    .nav-cta {
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      text-decoration: none;
+      padding: 0.7rem 1.8rem;
+      border: 1.5px solid var(--teal);
+      border-radius: 2px;
+      transition: all 0.35s ease;
+    }
+    .nav-cta:hover {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+      padding: 8rem 6rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 70%;
+      height: 140%;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 100%);
+      border-radius: 0 0 0 40%;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal-light);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1.5px;
+      background: var(--teal-light);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--teal);
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      max-width: 460px;
+      margin-bottom: 2.5rem;
+      line-height: 1.85;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-block;
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--teal);
+      text-decoration: none;
+      padding: 1rem 2.4rem;
+      border-radius: 2px;
+      transition: all 0.35s ease;
+      border: 1.5px solid var(--teal);
+    }
+    .btn-primary:hover {
+      background: var(--teal-deep);
+      border-color: var(--teal-deep);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 30px rgba(74, 107, 111, 0.25);
+    }
+    .btn-secondary {
+      display: inline-block;
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      text-decoration: none;
+      padding: 1rem 2.4rem;
+      border: 1.5px solid var(--sand);
+      border-radius: 2px;
+      transition: all 0.35s ease;
+    }
+    .btn-secondary:hover {
+      border-color: var(--teal);
+    }
+    .hero-image {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .book-wrapper {
+      position: relative;
+      perspective: 1200px;
+    }
+    .book-cover {
+      width: 380px;
+      max-width: 100%;
+      border-radius: 4px;
+      box-shadow:
+        0 25px 60px rgba(0,0,0,0.25),
+        0 10px 20px rgba(0,0,0,0.15),
+        -6px 0 15px rgba(0,0,0,0.1);
+      transform: rotateY(-6deg) rotateX(2deg);
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .book-cover:hover {
+      transform: rotateY(-2deg) rotateX(1deg) translateY(-4px);
+    }
+    .book-shadow {
+      position: absolute;
+      bottom: -30px;
+      left: 10%;
+      right: 10%;
+      height: 40px;
+      background: radial-gradient(ellipse, rgba(0,0,0,0.15) 0%, transparent 70%);
+      filter: blur(8px);
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 7rem 6rem; }
+    .section-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--sand);
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    /* ── ABOUT THE GUIDE ── */
+    .about {
+      background: var(--white);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .feature-card {
+      padding: 2rem;
+      background: var(--cream);
+      border-radius: 3px;
+      transition: all 0.35s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+    }
+    .feature-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--white);
+      font-size: 1rem;
+    }
+    .feature-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .feature-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ── WHAT'S INSIDE ── */
+    .inside {
+      background: var(--teal);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .inside::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+    .inside .section-number { color: rgba(255,255,255,0.35); }
+    .inside .section-title { color: var(--white); }
+    .inside-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .inside-item {
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 3px;
+      transition: all 0.35s ease;
+    }
+    .inside-item:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .inside-item-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 1rem;
+    }
+    .inside-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .inside-item p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.75;
+    }
+
+    /* ── AUTHORS ── */
+    .authors {
+      background: var(--cream);
+    }
+    .authors-content {
+      max-width: 700px;
+    }
+    .authors-content p {
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+    .author-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--charcoal);
+      margin-top: 2rem;
+      font-weight: 500;
+    }
+    .author-credentials {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.35rem;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--cream-warm);
+      text-align: center;
+      padding: 8rem 6rem;
+    }
+    .cta-section .section-title {
+      max-width: 600px;
+      margin: 0 auto 1.25rem;
+    }
+    .cta-section p {
+      color: var(--text-light);
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.5);
+      padding: 3rem 6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+    footer a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer a:hover { color: var(--white); }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 7rem 3rem 4rem;
+        text-align: center;
+        min-height: auto;
+      }
+      .hero::before {
+        top: auto;
+        bottom: -10%;
+        left: -20%;
+        right: -20%;
+        width: 140%;
+        height: 55%;
+        border-radius: 40% 40% 0 0;
+      }
+      .hero-eyebrow { justify-content: center; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-image { order: -1; }
+      .book-cover { width: 280px; }
+      section { padding: 5rem 3rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .inside-list { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-logo { height: 36px; }
+      .nav-cta { padding: 0.5rem 1.2rem; font-size: 0.7rem; }
+      .hero { padding: 6rem 1.5rem 3rem; gap: 2.5rem; }
+      section { padding: 4rem 1.5rem; }
+      .about-features { grid-template-columns: 1fr; }
+      .cta-section { padding: 5rem 1.5rem; }
+      footer { padding: 2.5rem 1.5rem; }
+      .book-cover { width: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="https://www.lastinglanguagetherapy.com/">
+      <img src="assets/logo-1.png" alt="Lasting Language Therapy Services" class="nav-logo">
+    </a>
+    <a href="#get-your-copy" class="nav-cta">Get Your Copy</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">New Resource Guide</div>
+      <h1>Therapy Companion for <em>Parkinson's Voice&nbsp;Therapy</em></h1>
+      <p class="hero-desc">A comprehensive workbook of practical exercises, evidence-based strategies, and supportive guidance for patients, caregivers, and clinicians navigating Parkinson's voice therapy.</p>
+      <div class="hero-actions">
+        <a href="#get-your-copy" class="btn-primary">Get Your Copy</a>
+        <a href="#whats-inside" class="btn-secondary">See What's Inside</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="book-wrapper">
+        <img src="assets/book-cover.png" alt="Therapy Companion workbook cover" class="book-cover">
+        <div class="book-shadow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <div class="section-number">01</div>
+        <h2 class="section-title">Built for the Journey, Not Just the Session</h2>
+        <p>This guide was created by practicing speech-language pathologists who understand the unique challenges Parkinson's disease presents to communication. It bridges the gap between therapy sessions and daily life.</p>
+        <p>Whether you're a patient looking to continue your progress at home, a caregiver supporting a loved one, or a fellow clinician seeking structured resources, this companion was designed with you in mind.</p>
+      </div>
+      <div class="about-features fade-up">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Evidence-Based</h3>
+          <p>Grounded in current research and proven therapeutic approaches for voice rehabilitation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Patient-Centered</h3>
+          <p>Written in clear, accessible language for patients and their families.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <h3>Practical Exercises</h3>
+          <p>Structured activities designed for consistent practice between sessions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Progress Tracking</h3>
+          <p>Tools to monitor improvement and maintain motivation throughout the process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="inside" id="whats-inside">
+    <div class="fade-up">
+      <div class="section-number">02</div>
+      <h2 class="section-title">What You'll Find Inside</h2>
+    </div>
+    <div class="inside-list fade-up">
+      <div class="inside-item">
+        <div class="inside-item-number">01</div>
+        <h3>Understanding Your Voice</h3>
+        <p>A clear overview of how Parkinson's affects speech and voice production, helping you understand the "why" behind each exercise.</p>
+      </div>
+      <div class="inside-item">
+        <div class="inside-item-number">02</div>
+        <h3>Daily Exercise Routines</h3>
+        <p>Step-by-step voice exercises designed for home practice, organized by difficulty and focus area.</p>
+      </div>
+      <div class="inside-item">
+        <div class="inside-item-number">03</div>
+        <h3>Breathing &amp; Phonation</h3>
+        <p>Targeted techniques to strengthen breath support and improve vocal quality and loudness.</p>
+      </div>
+      <div class="inside-item">
+        <div class="inside-item-number">04</div>
+        <h3>Communication Strategies</h3>
+        <p>Real-world tips for conversations, phone calls, and social situations where voice challenges arise.</p>
+      </div>
+      <div class="inside-item">
+        <div class="inside-item-number">05</div>
+        <h3>Caregiver Resources</h3>
+        <p>Guidance for family members and caregivers on supporting effective communication at home.</p>
+      </div>
+      <div class="inside-item">
+        <div class="inside-item-number">06</div>
+        <h3>Progress Worksheets</h3>
+        <p>Printable tracking sheets and self-assessment tools to celebrate growth and guide therapy goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHORS -->
+  <section class="authors" id="authors">
+    <div class="authors-content fade-up">
+      <div class="section-number">03</div>
+      <h2 class="section-title">Created by Clinicians Who Care</h2>
+      <p>This guide is the result of years of hands-on clinical experience working with Parkinson's patients. It was born from a simple observation: patients needed something tangible to take home — something that reinforced the work being done in therapy and gave them confidence to practice on their own.</p>
+      <p>Every page reflects the real questions, real challenges, and real breakthroughs that happen in the therapy room.</p>
+      <div class="author-names">Amanda Smith &amp; Abigail Wallace</div>
+      <div class="author-credentials">M.Ed., CCC-SLP — Lasting Language Therapy Services</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="get-your-copy">
+    <div class="fade-up">
+      <div class="section-number">04</div>
+      <h2 class="section-title">Ready to Support Your Voice Therapy Journey?</h2>
+      <p>Get your copy of the Therapy Companion and bring structured, expert-guided practice into your daily routine.</p>
+      <a href="https://www.lastinglanguagetherapy.com/contact" class="btn-primary">Request Your Copy</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>&copy; 2026 Lasting Language Therapy Services. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="https://www.lastinglanguagetherapy.com/">Home</a>
+      <a href="https://www.lastinglanguagetherapy.com/about">About</a>
+      <a href="https://www.lastinglanguagetherapy.com/contact">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Scroll-triggered fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
